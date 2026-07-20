@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="bg" x1="93.3%" y1="25.0%" x2="6.7%" y2="75.0%"><stop offset="0" stop-color="#F6E4DB"/><stop offset="1" stop-color="#EFE5D8"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+    <rect x="0" y="430" width="800" height="170" fill="#C9A87C"/>
+    <rect x="0" y="430" width="800" height="12" fill="rgba(0,0,0,.06)"/>
+    <rect x="500" y="70" width="210" height="200" rx="10" fill="#FDFBF7" opacity=".7"/>
+      <line x1="605" y1="70" x2="605" y2="270" stroke="#EFE5D8" stroke-width="6"/>
+      <line x1="500" y1="170" x2="710" y2="170" stroke="#EFE5D8" stroke-width="6"/>
+    <ellipse cx="400" cy="470" rx="300" ry="30" fill="rgba(43,38,34,.10)"/>
+    <!-- sofa/bed block -->
+    <rect x="120" y="330" width="300" height="110" rx="24" fill="#C15F3C"/>
+    <rect x="135" y="300" width="270" height="80" rx="22" fill="#C15F3C"/>
+    <rect x="150" y="315" width="80" height="70" rx="16" fill="#F5ECE0" opacity=".55"/>
+    <rect x="250" y="315" width="80" height="70" rx="16" fill="#F5ECE0" opacity=".4"/>
+    <!-- plant -->
+    <rect x="640" y="360" width="46" height="80" rx="8" fill="#7A4A32"/>
+    <path d="M663 360 q-40 -60 -20 -110 q30 40 20 110" fill="#4C7A63"/>
+    <path d="M663 360 q40 -50 26 -96 q-34 34 -26 96" fill="#4C7A63" opacity=".8"/>
+    <!-- side table + lamp -->
+    <rect x="470" y="360" width="70" height="80" rx="8" fill="#C9A87C"/>
+    <rect x="498" y="300" width="14" height="64" rx="5" fill="#2B2622"/>
+    <path d="M478 300 h54 l-14 34 h-26 z" fill="#C0913E"/>
+    <!-- rug -->
+    <ellipse cx="360" cy="470" rx="210" ry="34" fill="#C0913E" opacity=".35"/>
+    <!-- wall art -->
+    <rect x="180" y="150" width="90" height="110" rx="8" fill="#FDFBF7"/>
+    <rect x="192" y="162" width="66" height="86" rx="4" fill="#C15F3C" opacity=".7"/>
+    <circle cx="320" cy="180" r="26" fill="#C0913E" opacity=".8"/>
+</svg>

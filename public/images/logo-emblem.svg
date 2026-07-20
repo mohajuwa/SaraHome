@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 0 280 330" width="280" height="330"><defs><linearGradient id="tanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0" stop-color="#DDBE97"/><stop offset="1" stop-color="#B0854F"/></linearGradient></defs>
+  <!-- roof -->
+  <path d="M100 88 L200 22 L300 88 L286 100 L200 44 L114 100 Z" fill="url(#tanGrad)"/>
+  <rect x="126" y="38" width="22" height="34" rx="3" fill="url(#tanGrad)"/>
+  <!-- S -->
+  <text x="200" y="235" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="240" font-weight="bold" fill="#2C3A5A">S</text>
+  <!-- crescent -->
+  <circle cx="252" cy="118" r="16" fill="#C79B6D"/>
+  <circle cx="259" cy="112" r="14" fill="#F8F6F2"/>
+  <circle cx="270" cy="100" r="3.2" fill="#C79B6D"/>
+  <!-- bed -->
+  <g transform="translate(122,118)">
+    <rect x="0" y="0" width="7" height="74" rx="3" fill="#B0854F"/>
+    <rect x="118" y="14" width="6" height="52" rx="3" fill="#B0854F"/>
+    <path d="M7 34 q30 -16 58 -6 q34 11 56 2 v22 H7 Z" fill="url(#tanGrad)"/>
+    <rect x="9" y="12" width="26" height="16" rx="6" fill="#F2E7D8"/>
+    <rect x="38" y="12" width="26" height="16" rx="6" fill="#EADDC9"/>
+    <path d="M7 52 h114 l14 26 h-142 Z" fill="#C79B6D"/>
+    <path d="M7 52 h114 l14 26 h-142 Z" fill="#000" opacity=".06"/>
+  </g>
+  <!-- ground swishes -->
+  <path d="M92 300 q108 26 216 0 q-14 14 -38 16 q-70 12 -140 0 q-24 -2 -38 -16z" fill="url(#tanGrad)" opacity=".9"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="bg" x1="85.4%" y1="14.6%" x2="14.6%" y2="85.4%"><stop offset="0" stop-color="#EFE5D8"/><stop offset="1" stop-color="#F5ECE0"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><ellipse cx="400" cy="470" rx="190" ry="26" fill="rgba(43,38,34,.12)"/>
+    <g>
+      <rect x="200" y="330" width="400" height="26" rx="8" fill="#C9A87C"/>
+      <rect x="215" y="356" width="20" height="110" rx="6" fill="#7A4A32"/>
+      <rect x="565" y="356" width="20" height="110" rx="6" fill="#7A4A32"/>
+      <rect x="470" y="356" width="110" height="80" rx="8" fill="#F5ECE0"/>
+      <rect x="250" y="250" width="150" height="90" rx="8" fill="#2B2622"/>
+      <rect x="258" y="258" width="134" height="74" rx="4" fill="#4C7A63"/>
+      <rect x="300" y="340" width="50" height="16" rx="4" fill="#2B2622"/>
+      <rect x="430" y="300" width="20" height="40" rx="4" fill="#C15F3C"/>
+      <circle cx="440" cy="292" r="16" fill="#C0913E"/>
+    </g>
+</svg>

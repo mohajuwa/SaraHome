@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-sidebar] {
+    transition: width .25s ease, transform .3s ease;
+}
+[data-sidebar].collapsed {
+    width: 88px;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-canvas text-ink antialiased;
+        font-feature-settings: 'ss01' on;
+    }
+    ::selection {
+        @apply bg-clay/20 text-ink;
+    }
+    /* Slim, warm scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ddcdb9;
+        border-radius: 9999px;
+        border: 2px solid #f7f2ec;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-clay/40;
+    }
+    .btn-primary {
+        @apply btn bg-clay text-white hover:bg-clay-dark shadow-card;
+    }
+    .btn-ghost {
+        @apply btn bg-white text-ink border border-line hover:border-clay/40 hover:text-clay;
+    }
+    .card {
+        @apply rounded-2xl bg-white border border-line shadow-card;
+    }
+    .pill {
+        @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold;
+    }
+    .field {
+        @apply w-full rounded-xl border-line bg-white text-ink placeholder:text-muted/70 focus:border-clay focus:ring-clay/30;
+    }
+    .nav-link {
+        @apply relative flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-ink/60 transition-all duration-200 hover:bg-white hover:text-ink hover:shadow-card;
+    }
+    .nav-link.active {
+        @apply bg-white font-bold text-clay shadow-card hover:text-clay;
+    }
+    .nav-link.active .nav-ind {
+        @apply absolute inset-y-2 right-0 w-1 rounded-full bg-clay;
+    }
+    .nav-section {
+        @apply px-3.5 pb-1.5 pt-5 text-[11px] font-bold tracking-[.18em] text-muted/70;
+    }
+}

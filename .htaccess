@@ -1,0 +1,16 @@
+# SARAHOME — routes all traffic into Laravel's /public folder.
+# Use this when the hosting document root points at the project root
+# instead of the public/ directory (common on shared hosting).
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Send everything to public/ without exposing it in the URL
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Never serve sensitive files
+<FilesMatch "^\.env|composer\.(json|lock)|package(-lock)?\.json$">
+    Require all denied
+</FilesMatch>
