@@ -1,35 +1,33 @@
-import cv2
-import numpy as np
+import base64
+import os
 
-# إضافة حرف r قبل مسار الويندوز يحل مشكلة الـ SyntaxWarning
-img_path = r'D:\01_Projects\SaraHome-Deploy\public\images\logo.jpeg'
-img = cv2.imread(img_path)
+def create_standalone_svg(png_path, svg_path, width, height):
+    if not os.path.exists(png_path):
+        print(f"File not found: {png_path}")
+        return
 
-if img is None:
-    print(f"عذراً، لم يتم العثور على الصورة في المسار المحدد: {img_path}")
-else:
-    # 1. معالجة وتفريغ الخلفية الكريمة لتصبح شفافة
-    h, w = img.shape[:2]
-    mask = np.zeros((h + 2, w + 2), np.uint8)
-    img_flood = img.copy()
+    with open(png_path, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
 
-    # تفريغ ألوان الخلفية المتقاربة من الزاوية
-    cv2.floodFill(img_flood, mask, (0, 0), (0, 0, 0), (18, 18, 18), (18, 18, 18), cv2.FLOODFILL_FIXED_RANGE)
-    bg_mask = (img_flood[:, :, 0] == 0) & (img_flood[:, :, 1] == 0) & (img_flood[:, :, 2] == 0)
+    svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {width} {height}" width="100%" height="100%">
+  <image href="data:image/png;base64,{encoded_string}" x="0" y="0" width="{width}" height="{height}" preserveAspectRatio="xMidYMid meet"/>
+</svg>'''
 
-    # تحويل الصورة إلى BGRA (قناة شفافية Alpha)
-    rgba = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
-    rgba[bg_mask, 3] = 0  # جعل الخلفية شفافة
+    with open(svg_path, "w", encoding="utf-8") as svg_file:
+        svg_file.write(svg_content)
+    print(f"Created standalone SVG: {svg_path}")
 
-    # 2. حفظ النسخة الكاملة المفرغة logo-full.png
-    cv2.imwrite(r'D:\01_Projects\SaraHome-Deploy\public\images\logo-full.png', rgba)
+# Paths
+base_dir = r'D:\01_Projects\SaraHome-Deploy\public\images'
 
-    # 3. قص الشعار الصافي (الرمز العلوي فقط) وحفظ logo-emblem.png
-    # الأبعاد محسوبة بدقة حسب حجم صورتك
-    y1, y2 = int(h * 0.12), int(h * 0.62)
-    x1, x2 = int(w * 0.20), int(w * 0.80)
-    emblem = rgba[y1:y2, x1:x2]
+create_standalone_svg(
+    os.path.join(base_dir, 'logo-emblem.png'),
+    os.path.join(base_dir, 'logo-emblem.svg'),
+    860, 615
+)
 
-    cv2.imwrite(r'D:\01_Projects\SaraHome-Deploy\public\images\logo-emblem.png', emblem)
-
-    print("تم استخراج الصور المفرغة الصافية (logo-full.png و logo-emblem.png) بنجاح!")
+create_standalone_svg(
+    os.path.join(base_dir, 'logo-full.png'),
+    os.path.join(base_dir, 'logo-full.svg'),
+    1000, 1000
+)
